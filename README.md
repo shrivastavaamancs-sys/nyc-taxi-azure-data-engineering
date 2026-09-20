@@ -1,210 +1,42 @@
-\# NYC Taxi Azure Data Engineering
+# NYC Taxi Azure Data Engineering Pipeline
 
+## 📌 Project Overview
+An end-to-end cloud-native **Data Engineering Pipeline** designed to ingest, transform, and analyze the large-scale **NYC Taxi Trip Dataset**. This project leverages **Azure, Apache Airflow, PySpark, SQL, and Power BI** to deliver automated ETL workflows and business intelligence analytics.
 
+---
 
-\## Project Overview
+## 🏗️ Architecture & Data Flow
+1. **Raw Data Storage:** Ingesting trip datasets into the `data/raw` storage layer.
+2. **Workflow Orchestration:** Scheduling and running data pipelines using **Apache Airflow**.
+3. **Data Transformation:** Executing distributed data transformations, data quality checks, and aggregations using **PySpark**.
+4. **Data Warehousing:** Storing processed records in optimized **SQL** databases for analytical queries.
+5. **Business Intelligence:** Creating visual dashboards and KPI reporting in **Power BI**.
 
+---
 
+## 🛠️ Tech Stack & Tools
+* **Cloud Platform:** Microsoft Azure
+* **Orchestration:** Apache Airflow
+* **Big Data Processing:** PySpark, Python
+* **Database & Querying:** SQL
+* **Visualization & BI:** Power BI
+* **Version Control:** Git, GitHub
 
-An end-to-end Azure Data Engineering project using NYC Yellow Taxi Trips 2024 data.
+---
 
-
-
-The project demonstrates batch data ingestion, data transformation, data warehousing, orchestration, analytics, and visualization using Azure Data Engineering technologies.
-
-
-
-\## Architecture
-
-
-
-Kaggle Dataset
-
-&#x20;       ↓
-
-Azure Data Factory
-
-&#x20;       ↓
-
-ADLS Gen2 - Bronze
-
-&#x20;       ↓
-
-Azure Databricks + PySpark
-
-&#x20;       ↓
-
-ADLS Gen2 - Silver
-
-&#x20;       ↓
-
-ADLS Gen2 - Gold
-
-&#x20;       ↓
-
-Azure Synapse Analytics / Azure SQL
-
-&#x20;       ↓
-
-Power BI
-
-
-
-Airflow will be used for workflow orchestration.
-
-
-
-\## Technologies
-
-
-
-\- Azure Data Factory
-
-\- Azure Data Lake Storage Gen2
-
-\- Azure Databricks
-
-\- PySpark
-
-\- Azure Synapse Analytics
-
-\- Azure SQL
-
-\- Apache Airflow
-
-\- SQL
-
-\- Power BI
-
-\- Python
-
-\- Git \& GitHub
-
-\- Docker
-
-
-
-\## Architecture Pattern
-
-
-
-The project follows the Medallion Architecture:
-
-
-
-\### Bronze Layer
-
-
-
-Stores raw data with minimal transformation.
-
-
-
-\### Silver Layer
-
-
-
-Contains cleaned, validated, and transformed data.
-
-
-
-\### Gold Layer
-
-
-
-Contains business-ready analytical datasets for Synapse/Azure SQL and Power BI.
-
-
-
-\## Data Source
-
-
-
-NYC Yellow Taxi Trips 2024 Aggregated Dataset.
-
-
-
-The dataset is used for educational and portfolio purposes.
-
-
-
-\## Key Analytics
-
-
-
-The pipeline will support analytics such as:
-
-
-
-\- Total taxi trips
-
-\- Total revenue
-
-\- Average fare
-
-\- Average trip distance
-
-\- Trips by hour
-
-\- Trips by day
-
-\- Monthly revenue trends
-
-\- Peak travel periods
-
-\- Payment type analysis
-
-\- Pickup and drop-off analysis
-
-\- Revenue by location
-
-\- Distance versus fare analysis
-
-
-
-\## Project Structure
-
-
-
+## 📂 Repository Structure
 ```text
-
 nyc-taxi-azure-data-engineering/
-
-│
-
+├── airflow/        # DAGs and pipeline orchestration workflows
+├── architecture/   # System architecture diagrams & design docs
+├── config/         # Pipeline configuration and environment files
 ├── data/
-
-│   ├── raw/
-
-│   ├── bronze/
-
-│   ├── silver/
-
-│   └── gold/
-
-│
-
-├── notebooks/
-
-├── pyspark/
-
-├── sql/
-
-├── airflow/
-
-├── powerbi/
-
-├── architecture/
-
-├── docs/
-
-├── config/
-
-│
-
-├── README.md
-
-├── requirements.txt
-
-└── .gitignore
-
+│   └── raw/        # Raw NYC Taxi trip datasets
+├── docs/           # Project documentation and specifications
+├── notebooks/      # Data exploration and transformation notebooks
+├── powerbi/        # Power BI dashboard files (.pbix) and reports
+├── pyspark/        # PySpark ETL transformation scripts
+├── sql/            # SQL schema definitions and analytical queries
+├── .gitignore      # Git ignore rules
+├── README.md       # Project documentation
+└── requirements.txt# Dependencies and libraries
